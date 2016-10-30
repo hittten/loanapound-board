@@ -15,5 +15,16 @@
     "bugs": {
         "url": "https://github.com/hittten/loanapound/issues"
     },
-    "homepage": "https://github.com/hittten/loanapound#readme"
+    "homepage": "https://github.com/hittten/loanapound#readme",
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-cli": "^1.2.2",
+        "gulp-plumber": "^1.1.0",
+        "gulp-uglify": "^2.0.0",
+        "http": "0.0.0",
+        "st": "^1.2.0"
+    },
+    "dependencies": {
+        "restangular": "^1.5.2"
+    }
 }
