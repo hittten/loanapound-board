@@ -1,0 +1,27 @@
+<h2 class="text-center">Loan - {{ loansController.provider }}</h2>
+
+<table class="table table-striped">
+    <tbody>
+    <tr>
+        <th>ID</th>
+        <td>{{ loansController.loan.id }}</td>
+    </tr>
+    <tr>
+        <th>Provider</th>
+        <td>{{ loansController.loan.provider }}</td>
+    </tr>
+    <tr>
+        <th>Borrowing Rate</th>
+        <td>{{ loansController.loan.borrowing_rate }}%</td>
+    </tr>
+    <tr>
+        <th>Terms (years)</th>
+        <td>{{ loansController.loan.term }}</td>
+    </tr>
+    </tbody>
+</table>
+
+
+<a href="#/loans/{{ loansController.loan.id }}/edit" class="btn btn-primary">Edit</a>
+<a href="#/loans" class="btn btn-default">Back to list</a>
+<!--<a href="#/loans/{{ loansController.loan.id }}/delete" class="btn btn-danger">Eliminar</a>-->

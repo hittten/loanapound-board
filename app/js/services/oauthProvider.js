@@ -25,6 +25,9 @@ angular.module('loanPound')
 
         this.$get = function ($window) {
             return {
+                getToken : function() {
+                    return JSON.parse($window.localStorage.getItem(oauth.token_storage_key));
+                },
                 setToken : function(token) {
                     $window.localStorage.setItem(oauth.token_storage_key, JSON.stringify(token));
                 },
@@ -32,7 +35,7 @@ angular.module('loanPound')
                     $window.localStorage.removeItem(oauth.token_storage_key);
                 },
                 isAuthenticated : function() {
-                    return ($window.localStorage.getItem(oauth.token_storage_key) !== null);
+                    return (this.getToken() !== null);
                 },
                 authenticate : function() {
                     this.removeToken();
