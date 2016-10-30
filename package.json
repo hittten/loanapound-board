@@ -1,0 +1,19 @@
+{
+    "name": "dev.loanapound.com",
+    "version": "1.0.0",
+    "description": "Web aplication to manages loans",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hittten/loanapound.git"
+    },
+    "author": "Gilberto López Ambrosino",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/hittten/loanapound/issues"
+    },
+    "homepage": "https://github.com/hittten/loanapound#readme"
+}
