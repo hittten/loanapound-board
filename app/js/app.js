@@ -4,6 +4,7 @@
             oauthProvider.setClientId(CONFIG.CLIENT_ID);
             oauthProvider.setTokenStorageKey(CONFIG.TOKEN_STORAGE_KEY);
             oauthProvider.setAuthUrl(CONFIG.API_BASE_URL + CONFIG.API_AUTH_URL);
+            oauthProvider.setLogoutUrl(CONFIG.API_BASE_URL + CONFIG.API_LOGOUT_URL);
             oauthProvider.setResponseType(CONFIG.RESPONSE_TYPE);
 
             RestangularProvider.setBaseUrl(CONFIG.API_BASE_URL);

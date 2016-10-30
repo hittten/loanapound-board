@@ -2,6 +2,7 @@ angular.module('loanPound')
     .controller('loansController', function(loanFactory, $routeParams, $location) {
         var controller = this;
         controller.loans = [];
+        controller.loan = undefined;
         controller.form = {
             success: false,
             errors: null
@@ -50,10 +51,8 @@ angular.module('loanPound')
 
             promise
                 .then(function (result) {
-                    console.log(result);
-                    if(result.id == controller.loan.id){
-                        controller.form.success = true;
-                    }
+                    controller.form.success = true;
+                    controller.loan = undefined;
                 })
                 .catch(function (error) {
                     if (error && error.data) {

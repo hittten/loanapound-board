@@ -5,6 +5,7 @@ angular.module('loanPound')
         oauth.client_id = '';
         oauth.token_storage_key = '';
         oauth.api_auth_url = '';
+        oauth.api_logout_url = '';
         oauth.response_type = '';
 
         oauth.setClientId = function (client_id) {
@@ -17,6 +18,10 @@ angular.module('loanPound')
 
         oauth.setAuthUrl = function (url) {
             oauth.api_auth_url = url;
+        };
+
+        oauth.setLogoutUrl = function (url) {
+            oauth.api_logout_url = url;
         };
 
         oauth.setResponseType = function (type) {
@@ -57,8 +62,9 @@ angular.module('loanPound')
 
                     return '?' + queryString.join('&');
                 },
-                logout : function(providerName) {
-                    //TODO: finish logout
+                logout : function () {
+                    this.removeToken();
+                    $window.location.replace(oauth.api_logout_url);
                 }
             };
         };
