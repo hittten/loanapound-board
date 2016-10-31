@@ -1,8 +1,15 @@
 angular.module('loanPound')
     .config(function ($routeProvider) {
         $routeProvider
+            .when('/', {
+                redirectTo: '/loans'
+            })
             .when('/access_token=:token&expires_in=:expires&token_type=:type', {
-                template: '',
+                template: 'tpl/pages/loading.html',
+                controller: 'oauthController'
+            })
+            .when('/logout', {
+                template: 'tpl/pages/loading.html',
                 controller: 'oauthController'
             })
             .when('/loans',{

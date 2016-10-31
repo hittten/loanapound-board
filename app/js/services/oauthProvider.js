@@ -28,13 +28,18 @@ angular.module('loanPound')
             oauth.response_type = type;
         };
 
-        this.$get = function ($window) {
+        oauth.getToken = function() {
+            return window.localStorage.getItem(oauth.token_storage_key);
+        };
+
+        this.$get = function ($window, $http) {
             return {
                 getToken : function() {
-                    return JSON.parse($window.localStorage.getItem(oauth.token_storage_key));
+                    return $window.localStorage.getItem(oauth.token_storage_key);
                 },
                 setToken : function(token) {
-                    $window.localStorage.setItem(oauth.token_storage_key, JSON.stringify(token));
+                    $http.defaults.headers.common.Authorization = 'Bearer ' + token;
+                    $window.localStorage.setItem(oauth.token_storage_key, token);
                 },
                 removeToken : function() {
                     $window.localStorage.removeItem(oauth.token_storage_key);
